@@ -1,0 +1,1 @@
+SongProperties = ["id", "title", "channel", "duration"]
