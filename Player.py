@@ -7,7 +7,7 @@ class Player:
     def __init__(self) -> None:
         pass
 
-    def play(self, item):
+    def play(self, item, shuffle: bool = False):
         if isinstance(item, Song):
             # play song
             print("Playing : {}".format(item.get_prop("title")))
@@ -15,4 +15,6 @@ class Player:
             return
         if isinstance(item, Playlist):
             # play playlist
+            print("Playing Playlist : " + item.getName())
+            os.system("mpv {} --no-video".format(item.get_link(shuffle=shuffle)))
             return
